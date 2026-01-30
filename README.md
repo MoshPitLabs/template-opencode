@@ -2,7 +2,7 @@
 <h1 align="center">
    <img src="./.github/assets/logo/repo-template-icon.svg" width="100px" />
    <br>
-      template-opencode | Claude Code Components Template
+      template-opencode | OpenCode Components Template
    <br>
       <img src="./.github/assets/pallet/pallet-0.png" width="800px" /> <br>
 
@@ -15,8 +15,8 @@
          <a href="https://github.com/MoshPitLabs/template-opencode/">
             <img src="https://img.shields.io/github/repo-size/MoshPitLabs/template-opencode?color=B16286&labelColor=282828&style=for-the-badge&logo=github&logoColor=B16286">
          </a>
-         <a href="https://docs.claude.ai">
-            <img src="https://img.shields.io/badge/Claude-Code-blue.svg?style=for-the-badge&labelColor=282828&logo=anthropic&logoColor=458588&color=458588">
+         <a href="https://opencode.ai">
+            <img src="https://img.shields.io/badge/Open-Code-blue.svg?style=for-the-badge&labelColor=282828&logo=anthropic&logoColor=458588&color=458588">
          </a>
          <a href="https://github.com/MoshPitLabs/template-opencode/blob/main/LICENSE">
             <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=282828&colorB=98971A&logo=unlicense&logoColor=98971A&"/>
@@ -31,15 +31,15 @@
 
 # 🗃️ Overview
 
-**template-opencode** is a production-ready template repository for Claude Code projects, providing a curated collection of specialized agents, slash commands, skills, and MCP server integrations. This template serves as a foundation for building AI-assisted development environments with battle-tested components that enhance productivity across multiple technology stacks.
+**template-opencode** is a production-ready template repository for OpenCode projects, providing a curated collection of specialized agents, slash commands, skills, and MCP server integrations. This template serves as a foundation for building AI-assisted development environments with battle-tested components that enhance productivity across multiple technology stacks.
 
-Whether you're building Next.js applications, Go backends, Spring Boot services, game mods, or working with DevOps infrastructure, this template includes the tools and configurations to accelerate your development workflow with Claude Code.
+Whether you're building Next.js applications, Go backends, Spring Boot services, game mods, or working with DevOps infrastructure, this template includes the tools and configurations to accelerate your development workflow with OpenCode.
 
 <br/>
 
 ## 📚 Project Structure
 
-- [`.opencode/`](./.opencode/) - Core Claude Code components directory
+- [`.opencode/`](./.opencode/) - Core OpenCode components directory
   - [`agents/`](./.opencode/agents/) - 23 specialized domain expert agents
   - [`commands/`](./.opencode/commands/) - 6 slash commands for systematic workflows
   - [`skills/`](./.opencode/skills/) - 8 bundled resource skills with helper scripts
@@ -141,7 +141,7 @@ graph TB
 
 ## 1. **Clone the Template**
 
-Use this repository as a template for your new Claude Code project:
+Use this repository as a template for your new OpenCode project:
 
 ```bash
 # Create a new repository from this template on GitHub, then clone it
@@ -151,7 +151,7 @@ cd your-project
 
 > [!NOTE]
 > This template is designed for use with:
-> - Claude Code CLI (latest version)
+> - OpenCode (Claude Code fork/implementation)
 > - Projects using Git for version control
 > - Development environments with bash/zsh shells
 > - Optional: Docker, Kubernetes, and cloud platform CLIs
@@ -296,6 +296,7 @@ Create new specialized agents in `.opencode/agents/`:
 3. Use kebab-case for filenames (e.g., `my-new-agent.md`)
 4. Document the agent's purpose, persona, principles, and code examples
 5. Update `AGENTS.md` with the new agent information
+6. Agents are specialized subagents that OpenCode can delegate tasks to
 
 **Example frontmatter:**
 ```yaml
@@ -337,7 +338,7 @@ Add new commands in `.opencode/commands/`:
 <b>Configuring MCP Servers</b>
 </summary>
 
-MCP servers enable Claude Code to interact with external services:
+MCP servers enable OpenCode to interact with external services:
 
 1. Review existing integrations in `.opencode/mcp-servers/`
 2. Use the `mcp-builder` skill to create new servers (Python FastMCP or TypeScript SDK)
@@ -372,7 +373,7 @@ Adapt the template to your project:
 # 🖼️ Gallery
 
 <p align="center">
-   <i>Add screenshots of your Claude Code setup and workflows here</i><br>
+   <i>Add screenshots of your OpenCode setup and workflows here</i><br>
    <!-- <img src="./.github/assets/screenshots/example.png" style="margin-bottom: 15px;"/> <br> -->
    <!-- Screenshots last updated <b>2025-01-30</b> -->
 </p>
@@ -383,11 +384,11 @@ Adapt the template to your project:
 
 Resources and inspirations:
 
-  - [Claude Code Documentation](https://docs.claude.ai): Official Claude Code documentation
+  - [OpenCode](https://opencode.ai): OpenCode platform and documentation
   - [Model Context Protocol](https://modelcontextprotocol.io): MCP specification and guides
   - [FastMCP](https://github.com/jlowin/fastmcp): Python framework for building MCP servers
   - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk): Official TypeScript SDK for MCP
-  - [Anthropic](https://anthropic.com): Claude AI and tooling
+  - [Anthropic](https://anthropic.com): Claude AI powering the agents
 
 <br/>
 
@@ -410,7 +411,7 @@ Resources and inspirations:
 <!-- DO NOT TOUCH THIS SECTION#2: END -->
 
 <!-- Links -->
-[Claude Code Documentation]: https://docs.claude.ai
+[OpenCode]: https://opencode.ai
 [Model Context Protocol]: https://modelcontextprotocol.io
 [FastMCP]: https://github.com/jlowin/fastmcp
 [MCP TypeScript SDK]: https://github.com/modelcontextprotocol/typescript-sdk
