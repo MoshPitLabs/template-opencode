@@ -36,7 +36,7 @@ IMPORTANT: When creating prompts, ALWAYS display the complete prompt text in a c
 
 ### Model-Specific Optimization
 
-- Claude: Emphasis on helpful, harmless, honest
+- Model behavior: Emphasis on helpful, harmless, honest
 - GPT: Clear structure and examples
 - Open models: Specific formatting needs
 - Specialized models: Domain adaptation

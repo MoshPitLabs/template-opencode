@@ -71,8 +71,8 @@ Format all commits using Conventional Commits:
 
 [optional body]
 
-🤖 Generated with Claude Code
-Co-Authored-By: Claude <noreply@anthropic.com>
+🤖 Generated with OpenCode
+Co-Authored-By: OpenCode <noreply@opencode.ai>
 ```
 
 **Types**: feat, fix, docs, style, refactor, test, chore
@@ -111,7 +111,7 @@ When user requests PR creation:
    - [ ] No merge conflicts
    - [ ] Documentation updated
 
-   🤖 Generated with Claude Code
+   🤖 Generated with OpenCode
    ```
 4. **Set appropriate labels** based on branch type
 5. **Assign reviewers** if configured

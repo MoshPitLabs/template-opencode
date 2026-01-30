@@ -5,17 +5,17 @@
 - .claude/skills/
 - docs/
 
-## Claude Code File Locations
+## OpenCode File Locations
 
-When creating Claude Code components, always use the correct directory:
+When creating OpenCode components, always use the correct directory:
 
 | Component Type | Location | Purpose |
 |----------------|----------|---------|
-| Plans | `.claude/plans/` | Implementation plans and design documents |
-| Notes | `.claude/notes/` | Session notes, research, and observations |
-| Commands | `.claude/commands/` | Slash commands (workflows, processes) |
-| Agents | `.claude/agents/` | Specialized domain expertise agents |
-| Skills | `.claude/skills/` | Bundled resources with scripts |
+| Plans | `.opencode/plans/` | Implementation plans and design documents |
+| Notes | `.opencode/notes/` | Session notes, research, and observations |
+| Commands | `.opencode/commands/` | Slash commands (workflows, processes) |
+| Agents | `.opencode/agents/` | Specialized domain expertise agents |
+| Skills | `.opencode/skills/` | Bundled resources with scripts |
 
 **Important:**
 - Never create plans, notes, or commands outside their designated directories
@@ -31,7 +31,7 @@ When creating Claude Code components, always use the correct directory:
 
 ## Git Workflow
 Git operations (branching, commits, PRs, releases) are managed by the `claude-git-flow-manager` agent.
-See `.claude/agents/claude-git-flow-manager.md` for Git Flow conventions and commit message formats.
+See `.opencode/agents/git-flow-manager.md` for Git Flow conventions and commit message formats.
 
 ## Available Slash Commands
 

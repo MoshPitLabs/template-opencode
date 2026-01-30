@@ -23,7 +23,7 @@ pnpm add -D parcel @parcel/config-default parcel-resolver-tspaths html-inline
 # Create Parcel config with tspaths resolver
 if [ ! -f ".parcelrc" ]; then
   echo "🔧 Creating Parcel configuration with path alias support..."
-  cat > .parcelrc << 'EOF'
+  cat >.parcelrc <<'EOF'
 {
   "extends": "@parcel/config-default",
   "resolvers": ["parcel-resolver-tspaths", "..."]
@@ -41,7 +41,7 @@ pnpm exec parcel build index.html --dist-dir dist --no-source-maps
 
 # Inline everything into single HTML
 echo "🎯 Inlining all assets into single HTML file..."
-pnpm exec html-inline dist/index.html > bundle.html
+pnpm exec html-inline dist/index.html >bundle.html
 
 # Get file size
 FILE_SIZE=$(du -h bundle.html | cut -f1)
@@ -50,5 +50,5 @@ echo ""
 echo "✅ Bundle complete!"
 echo "📄 Output: bundle.html ($FILE_SIZE)"
 echo ""
-echo "You can now use this single HTML file as an artifact in Claude conversations."
+echo "You can now use this single HTML file as an artifact."
 echo "To test locally: open bundle.html in your browser"

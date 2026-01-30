@@ -51,7 +51,7 @@ proto/v1/*.pb.go
 .env.local
 secrets.nix
 
-# Claude Flow / AI Agent data directories
+# OpenCode / AI Agent data directories
 .swarm/
 .claude-flow/
 .hive-mind/
