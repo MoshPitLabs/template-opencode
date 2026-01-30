@@ -15,7 +15,7 @@
          <a href="https://github.com/MoshPitLabs/template-opencode/">
             <img src="https://img.shields.io/github/repo-size/MoshPitLabs/template-opencode?color=B16286&labelColor=282828&style=for-the-badge&logo=github&logoColor=B16286">
          </a>
-         <a href="https://docs.opencode.ai">
+         <a href="https://docs.claude.ai">
             <img src="https://img.shields.io/badge/Claude-Code-blue.svg?style=for-the-badge&labelColor=282828&logo=anthropic&logoColor=458588&color=458588">
          </a>
          <a href="https://github.com/MoshPitLabs/template-opencode/blob/main/LICENSE">
@@ -31,37 +31,35 @@
 
 # 🗃️ Overview
 
-**template-opencode** is a comprehensive template repository for Claude Code projects, providing a battle-tested collection of specialized agents, slash commands, skills, and MCP server integrations. This template serves as a foundation for building AI-assisted development environments with pre-configured components that enhance productivity across multiple technology stacks.
+**template-opencode** is a production-ready template repository for Claude Code projects, providing a curated collection of specialized agents, slash commands, skills, and MCP server integrations. This template serves as a foundation for building AI-assisted development environments with battle-tested components that enhance productivity across multiple technology stacks.
 
-Whether you're building Next.js applications, Go backends, Spring Boot services, or working with DevOps infrastructure, this template includes the tools and configurations to accelerate your development workflow with Claude Code.
+Whether you're building Next.js applications, Go backends, Spring Boot services, game mods, or working with DevOps infrastructure, this template includes the tools and configurations to accelerate your development workflow with Claude Code.
 
 <br/>
 
 ## 📚 Project Structure
 
 - [`.opencode/`](./.opencode/) - Core Claude Code components directory
-  - [`agents/`](./.opencode/agents/) - Specialized domain expert agents (25+ agents)
-  - [`commands/`](./.opencode/commands/) - Slash commands for systematic workflows
-  - [`skills/`](./.opencode/skills/) - Bundled resources with helper scripts
+  - [`agents/`](./.opencode/agents/) - 23 specialized domain expert agents
+  - [`commands/`](./.opencode/commands/) - 6 slash commands for systematic workflows
+  - [`skills/`](./.opencode/skills/) - 8 bundled resource skills with helper scripts
   - [`mcp-servers/`](./.opencode/mcp-servers/) - Model Context Protocol server integrations
   - [`settings/`](./.opencode/settings/) - Environment and performance configurations
+  - [`plans/`](./.opencode/plans/) - Implementation plans and design documents
+  - [`notes/`](./.opencode/notes/) - Session notes and observations
 - [`.github/`](./.github/) - GitHub templates, rulesets, and assets
-- [`docs/`](./docs/) - Documentation templates and guides
-- [`AGENTS.md`](./AGENTS.md) - Quick reference for available agents, commands, and skills
+- [`AGENTS.md`](./AGENTS.md) - Quick reference guide for all components
 
 <br/>
 
-## 📓 Project Components
+## 📓 Component Inventory
 
-| Component | Responsibility |
-| --------------------------- | :---------------------------------------------------------------------------------- |
-| **Specialized Agents** | Domain experts for full-stack development (Next.js, Go, Java/Kotlin, React, Svelte, etc.) |
-| **DevOps & Infrastructure** | Agents for Kubernetes, Terraform, CI/CD pipelines, and cloud platforms |
-| **Code Quality Agents** | Architecture review, code review, error detection, and security analysis |
-| **Slash Commands** | Systematic workflows for reflection, diagnosis, implementation, and refactoring |
-| **Document Skills** | Create and manipulate DOCX, XLSX, PPTX, and PDF files programmatically |
-| **MCP Integrations** | Discord webhooks, artifact builders, theme factory, and custom MCP servers |
-| **Git Flow Manager** | Automated Git Flow workflows with branch management and PR creation |
+| Component | Count | Description |
+| --------------------------- | :---: | :---------------------------------------------------------------------------------- |
+| **Specialized Agents** | 23 | Domain experts for full-stack, backend, frontend, game development, and infrastructure |
+| **Slash Commands** | 6 | Systematic workflows for reflection, diagnosis, implementation, and architecture |
+| **Skills** | 8 | Document manipulation (DOCX/XLSX/PDF/PPTX), artifact building, theming, MCP creation |
+| **MCP Integrations** | - | Discord webhooks and custom server templates |
 
 <br/>
 
@@ -75,25 +73,24 @@ graph TB
     Commands --> Reflection[/structured-reflection]
     Commands --> Diagnosis[/systematic-diagnosis]
     Commands --> Implementation[/systematic-implementation]
-    Commands --> Architecture[/create-architecture]
+    Commands --> Architecture[/create-architecture-docs]
     Commands --> Refactor[/refactor-code]
     Commands --> UltraThink[/ultrathink]
     
-    Agents --> Frontend[Frontend Agents]
-    Agents --> Backend[Backend Agents]
-    Agents --> DevOps[DevOps Agents]
-    Agents --> Quality[Quality Agents]
-    Agents --> Specialized[Specialized Agents]
+    Agents --> Frontend[Frontend Stack]
+    Agents --> Backend[Backend Stack]
+    Agents --> DevOps[DevOps & Infra]
+    Agents --> Quality[Code Quality]
+    Agents --> Specialized[Specialized Domains]
     
     Frontend --> NextJS[nextjs-fullstack]
     Frontend --> React[react-typescript]
-    Frontend --> Svelte[sveltekit-fullstack]
+    Frontend --> Svelte[sveltekit-fullstack<br/>sveltekit-frontend]
     
-    Backend --> Go[golang-backend-api]
-    Backend --> Java[java-kotlin-backend]
-    Backend --> API[API Services]
+    Backend --> Go[golang-backend-api<br/>golang-tui-bubbletea]
+    Backend --> Java[java-kotlin-backend<br/>-gpt52/-opus45]
     
-    DevOps --> K8s[devops-infrastructure]
+    DevOps --> Infra[devops-infrastructure]
     DevOps --> NixOS[nixos]
     DevOps --> GitFlow[git-flow-manager]
     
@@ -105,24 +102,28 @@ graph TB
     Specialized --> MLOps[mlops-engineer]
     Specialized --> Prompt[prompt-engineering]
     Specialized --> MCP[mcp-server]
-    Specialized --> AgentCreate[agent-creation]
+    Specialized --> Game[hytale-modding<br/>rpg-mmo-systems-designer]
+    Specialized --> Markdown[markdown-formatter]
+    Specialized --> AgentCreate[agent-creation<br/>command-creation]
     
     Skills[Skills System] --> Documents[Document Skills]
-    Skills --> Artifacts[artifacts-builder]
-    Skills --> Themes[theme-factory]
-    Skills --> MCPBuilder[mcp-builder]
+    Skills --> Builders[Builders & Tools]
     
-    Documents --> DOCX[DOCX Creation]
-    Documents --> XLSX[XLSX Analysis]
-    Documents --> PDF[PDF Manipulation]
-    Documents --> PPTX[PPTX Generation]
+    Documents --> DOCX[docx]
+    Documents --> XLSX[xlsx]
+    Documents --> PDF[pdf]
+    Documents --> PPTX[pptx]
+    
+    Builders --> Artifacts[artifacts-builder]
+    Builders --> Themes[theme-factory]
+    Builders --> MCPBuilder[mcp-builder]
+    Builders --> SkillCreate[skill-creator]
     
     MCP[MCP Servers] --> Discord[Discord Integration]
     MCP --> Custom[Custom Servers]
     
-    Settings[Configuration] --> Environment[Environment Settings]
-    Settings --> Performance[Performance Optimization]
-    Settings --> Privacy[Privacy Controls]
+    Settings[Configuration] --> Environment[.opencode/settings.json]
+    Settings --> EnvSettings[settings/environment/]
 ```
 
 <br/>
@@ -162,12 +163,17 @@ cd your-project
 Review and customize the configuration files:
 
 ```bash
-# Review the main agents documentation
+# Review the main agents and components documentation
 cat AGENTS.md
 
 # Customize settings for your environment
-# Edit .opencode/settings.json for global settings
-# Edit .opencode/settings/environment/ for specific configurations
+cat .opencode/settings.json
+
+# Review available agents
+ls .opencode/agents/
+
+# Review available commands
+ls .opencode/commands/
 ```
 
 <br/>
@@ -175,46 +181,104 @@ cat AGENTS.md
 ## 3. **Using the Components**
 
 > [!TIP]
-> To get the most value from this template, familiarize yourself with the available agents and commands before starting development.
+> To get the most value from this template, familiarize yourself with the available agents and commands by reviewing `AGENTS.md` before starting development.
 
-### Available Slash Commands
+### Available Slash Commands (6)
 
-- `/structured-reflection` - Expert-guided reflection techniques
-- `/structured-contemplation` - Problem-solving and contemplation workflows  
-- `/create-architecture` - Generate architecture documentation with diagrams
-- `/systematic-diagnosis` - Root cause analysis and issue diagnosis
-- `/systematic-implementation` - Validation-driven feature development
-- `/ultrathink` - Deep analysis and problem-solving mode
-- `/refactor-code` - Systematic code refactoring assistance
+| Command | Purpose |
+|---------|---------|
+| `/structured-reflection` | Expert-guided reflection and learning techniques |
+| `/structured-contemplation` | Deep problem-solving and contemplation workflows |
+| `/create-architecture-docs` | Generate architecture documentation with Mermaid diagrams |
+| `/systematic-diagnosis` | Root cause analysis and systematic issue diagnosis |
+| `/systematic-implementation` | Validation-driven feature development workflow |
+| `/ultrathink` | Deep analysis mode for complex problem-solving |
+| `/refactor-code` | Systematic code refactoring with quality checks |
 
-### Working with Specialized Agents
+### Specialized Agents (23)
 
-The template includes 25+ specialized agents. Key examples:
+<details>
+<summary><b>Full-Stack Development (3)</b></summary>
 
-- **Full-Stack Development**: `nextjs-fullstack`, `sveltekit-fullstack`
-- **Backend Services**: `golang-backend-api`, `java-kotlin-backend`
-- **Frontend**: `react-typescript`, `sveltekit-frontend`
-- **DevOps**: `devops-infrastructure`, `nixos`, `git-flow-manager`
-- **Code Quality**: `architecture-review`, `code-review`, `error-detective`, `security-engineer`
-- **Specialized**: `mlops-engineer`, `prompt-engineering`, `mcp-server`
+- `nextjs-fullstack` - Next.js 16+ App Router with React, TypeScript, PostgreSQL, Tailwind, Shadcn UI
+- `sveltekit-fullstack` - Svelte 5 + SvelteKit with TypeScript, PostgreSQL, Tailwind CSS
+- `sveltekit-frontend` - Svelte 5 + SvelteKit frontend-focused development
 
-### Using Skills
+</details>
 
-Skills bundle specialized knowledge with helper scripts:
+<details>
+<summary><b>Backend Development (5)</b></summary>
 
-```bash
-# Document manipulation skills
-- docx: Create and edit Word documents with tracked changes
-- xlsx: Spreadsheet creation and formula calculations  
-- pdf: PDF manipulation and form filling
-- pptx: Presentation creation and editing
+- `golang-backend-api` - Go 1.25+ backend APIs and microservices
+- `golang-tui-bubbletea` - Go TUI applications with Bubbletea v2
+- `java-kotlin-backend-gpt52` - Java/Kotlin Spring backend (GPT-5.2 model)
+- `java-kotlin-backend-opus45` - Java/Kotlin Spring backend (Opus 4.5 model)
+- `react-typescript` - React + TypeScript frontend development
 
-# Development skills
-- artifacts-builder: Build complex React/Tailwind artifacts
-- mcp-builder: Create MCP servers for external integrations
-- theme-factory: Apply professional themes (10 presets available)
-- skill-creator: Create your own custom skills
-```
+</details>
+
+<details>
+<summary><b>Game Development & Systems (2)</b></summary>
+
+- `hytale-modding` - Hytale server mods with Java 25+, Kotlin 2.3.0, Gradle 9.3.0, Worldgen v2
+- `rpg-mmo-systems-designer` - RPG/MMO game systems (progression, economy, crafting, combat)
+
+</details>
+
+<details>
+<summary><b>DevOps & Infrastructure (3)</b></summary>
+
+- `devops-infrastructure` - Kubernetes, Docker, Terraform, OpenTofu, Pulumi, CI/CD (Azure/GitHub Actions)
+- `nixos` - NixOS, Nix Flakes, Home Manager for reproducible environments
+- `git-flow-manager` - Git Flow workflows, branching, PR creation
+
+</details>
+
+<details>
+<summary><b>Code Quality & Security (4)</b></summary>
+
+- `architecture-review` - Review code for architectural consistency and best practices
+- `code-review` - Code review for quality, security, and maintainability
+- `security-engineer` - Security infrastructure and compliance specialist
+- `error-detective` - Log analysis and error pattern detection
+
+</details>
+
+<details>
+<summary><b>AI/ML & Specialized Tools (6)</b></summary>
+
+- `mlops-engineer` - ML pipelines, experiment tracking, model registries
+- `prompt-engineering` - LLM prompt optimization expert
+- `mcp-server` - Model Context Protocol integration specialist
+- `agent-creation` - Create specialized Claude Code agents
+- `command-creation` - Create slash commands
+- `markdown-formatter` - Markdown formatting and syntax expert
+
+</details>
+
+### Skills (8)
+
+Skills bundle specialized knowledge with helper scripts and reference documentation:
+
+<details>
+<summary><b>Document Manipulation (4)</b></summary>
+
+- **docx** - Create and edit Word documents with tracked changes, comments, formatting
+- **xlsx** - Spreadsheet creation, formula calculations, data analysis
+- **pdf** - PDF manipulation, form filling, text extraction
+- **pptx** - Presentation creation and editing with layouts and themes
+
+</details>
+
+<details>
+<summary><b>Development Tools (4)</b></summary>
+
+- **artifacts-builder** - Build complex React/Tailwind HTML artifacts for Claude.ai
+- **mcp-builder** - Create MCP servers for external service integrations (Python/TypeScript)
+- **theme-factory** - Apply professional themes to artifacts (10 presets available)
+- **skill-creator** - Create custom skills for Claude Code
+
+</details>
 
 <br/>
 
@@ -222,43 +286,84 @@ Skills bundle specialized knowledge with helper scripts:
 
 <details>
 <summary>
-Adding Your Own Agents
+<b>Adding Your Own Agents</b>
 </summary>
 
 Create new specialized agents in `.opencode/agents/`:
 
-1. Use the `agent-creation` agent to scaffold new agents
-2. Follow the existing agent structure and naming conventions
-3. Document the agent's purpose, use cases, and examples
-4. Update `AGENTS.md` with the new agent information
+1. Use the `agent-creation` agent to scaffold new agents with proper structure
+2. Follow the frontmatter pattern: `name`, `description`, `type`, `model`, `tools`, `permission`
+3. Use kebab-case for filenames (e.g., `my-new-agent.md`)
+4. Document the agent's purpose, persona, principles, and code examples
+5. Update `AGENTS.md` with the new agent information
+
+**Example frontmatter:**
+```yaml
+---
+name: my-agent
+description: Use this agent when...
+type: subagent
+model: anthropic/claude-sonnet-4-5
+tools:
+  write: true
+  edit: true
+permission:
+  bash:
+    "*": ask
+    "npm test*": allow
+---
+```
 
 </details>
 
 <details>
 <summary>
-Creating Custom Slash Commands
+<b>Creating Custom Slash Commands</b>
 </summary>
 
 Add new commands in `.opencode/commands/`:
 
-1. Use the `command-creation` agent for guidance
+1. Use the `command-creation` agent for guidance and scaffolding
 2. Commands are markdown files with structured workflows
 3. Use kebab-case for filenames (e.g., `my-command.md`)
-4. Commands are invoked as `/my-command` (without extension)
+4. Commands are invoked as `/my-command` (without `.md` extension)
+5. Document the command's purpose, workflow steps, and expected outcomes
+6. Update `AGENTS.md` to list the new command
 
 </details>
 
 <details>
 <summary>
-Configuring MCP Servers
+<b>Configuring MCP Servers</b>
 </summary>
 
 MCP servers enable Claude Code to interact with external services:
 
 1. Review existing integrations in `.opencode/mcp-servers/`
-2. Use the `mcp-builder` skill to create new servers
+2. Use the `mcp-builder` skill to create new servers (Python FastMCP or TypeScript SDK)
 3. Configure server settings in `.opencode/settings.json`
-4. Test integrations before deploying to production
+4. Test integrations thoroughly before deploying to production
+5. Document server capabilities and tool interfaces
+
+**Example Discord MCP:**
+- Send messages, announcements, teasers to Discord channels
+- Manage webhooks with friendly names
+- Rich embed formatting for release notes
+
+</details>
+
+<details>
+<summary>
+<b>Project-Specific Customization</b>
+</summary>
+
+Adapt the template to your project:
+
+1. **Remove unused agents** - Delete agents for tech stacks you don't use
+2. **Customize AGENTS.md** - Update the quick reference with your project's conventions
+3. **Configure settings** - Adjust `.opencode/settings.json` for your environment
+4. **Add project docs** - Create plans in `.opencode/plans/` for your features
+5. **Update README** - Replace this README with project-specific information
 
 </details>
 
@@ -269,7 +374,7 @@ MCP servers enable Claude Code to interact with external services:
 <p align="center">
    <i>Add screenshots of your Claude Code setup and workflows here</i><br>
    <!-- <img src="./.github/assets/screenshots/example.png" style="margin-bottom: 15px;"/> <br> -->
-   <!-- Screenshots last updated <b>2025-01-29</b> -->
+   <!-- Screenshots last updated <b>2025-01-30</b> -->
 </p>
 
 <br/>
@@ -278,7 +383,7 @@ MCP servers enable Claude Code to interact with external services:
 
 Resources and inspirations:
 
-  - [Claude Code Documentation](https://docs.opencode.ai): Official Claude Code documentation
+  - [Claude Code Documentation](https://docs.claude.ai): Official Claude Code documentation
   - [Model Context Protocol](https://modelcontextprotocol.io): MCP specification and guides
   - [FastMCP](https://github.com/jlowin/fastmcp): Python framework for building MCP servers
   - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk): Official TypeScript SDK for MCP
@@ -305,7 +410,7 @@ Resources and inspirations:
 <!-- DO NOT TOUCH THIS SECTION#2: END -->
 
 <!-- Links -->
-[Claude Code Documentation]: https://docs.opencode.ai
+[Claude Code Documentation]: https://docs.claude.ai
 [Model Context Protocol]: https://modelcontextprotocol.io
 [FastMCP]: https://github.com/jlowin/fastmcp
 [MCP TypeScript SDK]: https://github.com/modelcontextprotocol/typescript-sdk
