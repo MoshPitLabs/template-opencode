@@ -151,7 +151,7 @@ cd your-project
 
 > [!NOTE]
 > This template is designed for use with:
-> - OpenCode (Claude Code fork/implementation)
+> - OpenCode
 > - Projects using Git for version control
 > - Development environments with bash/zsh shells
 > - Optional: Docker, Kubernetes, and cloud platform CLIs
@@ -250,7 +250,7 @@ ls .opencode/commands/
 - `mlops-engineer` - ML pipelines, experiment tracking, model registries
 - `prompt-engineering` - LLM prompt optimization expert
 - `mcp-server` - Model Context Protocol integration specialist
-- `agent-creation` - Create specialized Claude Code agents
+- `agent-creation` - Create specialized OpenCode agents
 - `command-creation` - Create slash commands
 - `markdown-formatter` - Markdown formatting and syntax expert
 
@@ -273,10 +273,10 @@ Skills bundle specialized knowledge with helper scripts and reference documentat
 <details>
 <summary><b>Development Tools (4)</b></summary>
 
-- **artifacts-builder** - Build complex React/Tailwind HTML artifacts for Claude.ai
+- **artifacts-builder** - Build complex React/Tailwind HTML artifacts
 - **mcp-builder** - Create MCP servers for external service integrations (Python/TypeScript)
 - **theme-factory** - Apply professional themes to artifacts (10 presets available)
-- **skill-creator** - Create custom skills for Claude Code
+- **skill-creator** - Create custom skills for OpenCode
 
 </details>
 
@@ -388,7 +388,7 @@ Resources and inspirations:
   - [Model Context Protocol](https://modelcontextprotocol.io): MCP specification and guides
   - [FastMCP](https://github.com/jlowin/fastmcp): Python framework for building MCP servers
   - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk): Official TypeScript SDK for MCP
-  - [Anthropic](https://anthropic.com): Claude AI powering the agents
+  - [Anthropic](https://anthropic.com): Model provider (LLM)
 
 <br/>
 

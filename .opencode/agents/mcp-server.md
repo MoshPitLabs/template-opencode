@@ -198,7 +198,7 @@ When creating a new MCP integration:
 5. Validate performance under load
 
 ### Integration Testing
-1. Test with Claude Code CLI
+1. Test with OpenCode
 2. Verify component installation process
 3. Test environment variable handling
 4. Validate security constraints
@@ -248,7 +248,7 @@ npx claude-code-templates@latest --mcp="stripe-integration" --yes
 This will:
 - Read from cli-tool/components/mcps/stripe-integration.json
 - Merge the configuration into the user's .mcp.json file
-- Enable the MCP server for Claude Code
+- Enable the MCP server for OpenCode
 
 ### 5. Testing Workflow
 1. Create the MCP file in correct location
