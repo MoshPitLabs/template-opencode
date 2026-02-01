@@ -3,7 +3,7 @@ name: markdown-formatter
 description: Markdown formatting specialist. Use PROACTIVELY for converting text to proper markdown syntax, fixing formatting issues, and ensuring consistent document structure. Examples:\n\n<example>\nContext: The user has unformatted documentation that needs markdown conversion.\nuser: "Can you format this document with proper markdown?"\nassistant: "I'll use the markdown formatter agent to apply proper syntax"\n<commentary>\nMarkdown formatting requires specialized knowledge of CommonMark and GitHub Flavored Markdown.\n</commentary>\n</example>\n\n<example>\nContext: The user has a document with inconsistent heading levels.\nuser: "My README.md has messed up headings"\nassistant: "I'll use the markdown formatter to fix the heading hierarchy"\n<commentary>\nHeading hierarchy and markdown structure require formatting expertise.\n</commentary>\n</example>
 # color: "#6B7280"
 type: primary
-model: anthropic/claude-sonnet-4-5
+model: anthropic/claude-haiku-4-5
 tools:
   write: true
   edit: true
