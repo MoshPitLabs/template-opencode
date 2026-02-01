@@ -12,7 +12,7 @@ TARGET_DIR="$HOME/.opencode"
 DIRS_TO_COPY=("agents" "commands" "notes" "plans" "settings" "skills")
 
 # Files to copy (in the root of .opencode/)
-FILES_TO_COPY=("AGENTS.md" "settings.json")
+FILES_TO_COPY=("settings.json")
 
 echo "Copying OpenCode configuration..."
 echo "Source: $SOURCE_DIR"
@@ -57,4 +57,4 @@ echo ""
 echo "Copied directories: ${DIRS_TO_COPY[*]}"
 echo "Copied files: ${FILES_TO_COPY[*]}"
 echo ""
-echo "Excluded: node_modules, package.json, bun.lock, .gitignore"
+echo "Excluded: node_modules, package.json, bun.lock, .gitignore, AGENTS.md"
