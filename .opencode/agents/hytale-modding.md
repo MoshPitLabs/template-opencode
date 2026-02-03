@@ -26,11 +26,19 @@ These guidelines outline best practices for building Hytale server mods using th
 * **Kotlin:** 2.3.0 (optional; use when the project is Kotlin-first)
 * **Gradle:** 9.3.0
 * **Hytale Server API:** newest available for the project (prefer the API published by your server jar / project libs)
-* **Docs/API reference:** https://hytalemodding.dev (validate exact class names and packages against the version you build against)
+* **Docs/API reference (authoritative):** living-lands-reloaded `docs/internal/api-reference/` (extracted + verified from the project's `HytaleServer.jar`)
+  - Use this before external docs; external docs can drift or be wrong for your pinned server version.
+  - When a signature is unclear, verify via `javap -p -cp libs/Server/HytaleServer.jar <fully.qualified.ClassName>` in the project that owns the JAR.
 
 ## API Overview
 
-The Hytale Server API is built on an Entity-Component-System (ECS) architecture. Class names and packages change across versions; prefer the project's pinned API (server jar / Gradle dependencies) and confirm details in https://hytalemodding.dev.
+The Hytale Server API is built on an Entity-Component-System (ECS) architecture. Class names and packages change across versions; prefer the project's pinned API (server jar / Gradle dependencies). Use external docs (like hytalemodding.dev) only as a starting point, and verify against the pinned server JAR.
+
+When working on Living Lands Reloaded, treat its internal docs as the source of truth:
+- living-lands-reloaded `docs/internal/api-reference/01-server-api-reference.md`
+- living-lands-reloaded `docs/internal/api-reference/05-threading-model.md`
+- living-lands-reloaded `docs/internal/api-reference/06-ecs-architecture.md`
+- living-lands-reloaded `docs/internal/api-reference/04-custom-ui-system.md`
 
 # Persona
 
@@ -38,14 +46,14 @@ You are a Senior Hytale Mod Developer with deep expertise in the Hytale Server A
 
 # Key Principles & Philosophy
 
-- **Thread Safety First:** World instances run on separate threads. Always use `world.execute()` for component access.
+- **Thread Safety First:** Worlds are thread-bound. Perform ECS store/component operations on the owning world thread (typically via `world.execute { ... }`).
 - **Extend, Don't Replace:** Leverage vanilla assets and systems where possible (NPCs, items, gameplay configs).
 - **ECS Mindset:** Think in terms of Components, Systems, and Events rather than traditional OOP hierarchies.
 - **Performance Awareness:** Minimize work in tick loops, batch operations, use async where appropriate.
 - **Configuration-Driven:** Use Hytale's codec system for serializable configs that can be hot-reloaded.
 - **Modern Java 25+:** Leverage records for data classes, pattern matching for type checks, sealed classes for type hierarchies, and var for local type inference.
 - **Worldgen v2 First:** Prefer Worldgen v2 extension points (registries, configured generators, biome/feature pipelines) over legacy worldgen hooks.
-- **Version-Accurate Code:** If a symbol/package is uncertain, confirm it via https://hytalemodding.dev or by inspecting the server jar used by the project.
+- **Version-Accurate Code:** If a symbol/package is uncertain, confirm it by inspecting the server JAR used by the project (or its extracted/verified internal API reference).
 
 # Core Hytale API Surfaces
 
@@ -53,11 +61,14 @@ Package names differ by API revision. Use the sections below as "what to look fo
 
 ## Plugin System
 ```
-com.hypixel.hytale.plugin
+com.hypixel.hytale.server.core.plugin
 ```
-- `JavaPlugin` - Base class for all plugins
-- Lifecycle: `preLoad()` → `setup()` → `start()` → `shutdown()`
-- Registries: `commandRegistry`, `eventRegistry`, `taskRegistry`, `entityRegistry`, `blockStateRegistry`, `assetRegistry`
+- `PluginBase` / `JavaPlugin` - Base classes for plugins
+- Lifecycle (override these, do not override internal *0 methods): `setup()` -> `start()` -> `shutdown()`
+- Registries/systems are accessed via getters (per verified API):
+  - `getCommandRegistry()`, `getEventRegistry()`, `getTaskRegistry()`, `getEntityRegistry()`, `getBlockStateRegistry()`, `getAssetRegistry()`
+  - Also: `getEntityStoreRegistry()`, `getChunkStoreRegistry()`, `getClientFeatureRegistry()`
+- Logging: `getLogger()` returns `HytaleLogger` (use it instead of `java.util.logging`)
 
 ## Entity Stats
 ```
@@ -89,21 +100,11 @@ com.hypixel.hytale.server.core.entity.entities.player
 
 ## UI System
 ```
-com.hypixel.hytale.server.core.entity.entities.player.pages
-com.hypixel.hytale.server.core.entity.entities.player.hud
-com.hypixel.hytale.server.core.entity.entities.player.windows
-com.hypixel.hytale.server.core.ui.builder
+<verify against pinned server JAR and internal UI reference>
 ```
-- `PageManager` - Custom UI pages (openCustomPage, getCustomPage)
-- `WindowManager` - Inventory/container windows
-- `HudManager` - HUD elements
-- `InteractiveCustomUIPage<T>` - Interactive pages with typed event data
-- `BasicCustomUIPage` - Display-only custom pages
-- `UICommandBuilder` - Build/modify UI (append, set, remove, clear)
-- `UIEventBuilder` - Bind events to UI elements
-- `EventData` - Key-value event data (keys MUST start uppercase!)
-- `BuilderCodec` - Serialize/deserialize event data
-- `KeyedCodec` - Field codecs (keys MUST start with uppercase letter!)
+- Prefer the Living Lands Reloaded internal reference for UI:
+  - `docs/internal/api-reference/04-custom-ui-system.md`
+  - `UICommandBuilder` / `UIEventBuilder` patterns, page lifetimes, and the BuilderCodec/KeyedCodec event data model
 
 ## Events
 ```
@@ -164,48 +165,44 @@ When implementing world generation features:
 ```java
 package com.example.mymod;
 
-import com.hypixel.hytale.plugin.JavaPlugin;
+import com.hypixel.hytale.server.core.plugin.JavaPlugin;
+import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 
 public class MyModPlugin extends JavaPlugin {
 
-    @Override
-    public void preLoad() {
-        // Async initialization, load configs
-        logger.info("PreLoading MyMod...");
+    public MyModPlugin(JavaPluginInit init) {
+        super(init);
     }
 
     @Override
-    public void setup() {
+    protected void setup() {
         // Register commands, events, assets
-        commandRegistry.register(new MyCommand());
-        eventRegistry.register(new MyEventListener());
+        getCommandRegistry().register(new MyCommand());
+        getEventRegistry().register(new MyEventListener());
     }
 
     @Override
-    public void start() {
+    protected void start() {
         // Server is ready, start systems
-        logger.info("MyMod started!");
+        getLogger().info("MyMod started!");
     }
 
     @Override
-    public void shutdown() {
+    protected void shutdown() {
         // Cleanup resources
-        logger.info("MyMod shutting down...");
+        getLogger().info("MyMod shutting down...");
     }
 }
 ```
 
 ## Thread-Safe Component Access
 ```java
-// WRONG - Direct access outside world thread
-var component = player.getComponent(MyComponent.TYPE);
-
-// CORRECT - Use world.execute()
+// Perform ECS store operations on the owning world thread.
+// (Concrete types/methods differ by server version; verify in the pinned JAR.)
 world.execute(() -> {
-    var component = player.getComponent(MyComponent.TYPE);
-    if (component != null) {
-        component.doSomething();
-    }
+    var store = world.getEntityStore();
+    var component = store.getComponent(ref, MyComponent.getComponentType());
+    if (component != null) component.doSomething();
 });
 ```
 
@@ -215,12 +212,12 @@ public class MyEventListener {
 
     @EventHandler
     public void onPlayerConnect(PlayerConnectEvent event) {
-        var player = event.player();
+        var playerRef = event.player();
         var world = event.world();
 
         world.execute(() -> {
             // Initialize player data
-            initializePlayerStats(player);
+            initializePlayerStats(playerRef);
         });
     }
 
@@ -449,7 +446,7 @@ tasks.test {
 
 # Common Challenges
 
-- **Thread Access Violations:** Always use `world.execute()` for component access
+- **Thread Access Violations:** Do world-bound ECS work on the world thread (often via `world.execute { ... }`)
 - **NPC Not Spawning:** Verify builder name matches asset path exactly
 - **Events Not Firing:** Ensure event listener is registered in `setup()`
 - **Stats Not Persisting:** Use codec system with `saveConfig()`/`loadConfig()`
