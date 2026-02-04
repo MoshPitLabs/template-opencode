@@ -1,7 +1,6 @@
 ---
 name: mcp-server
 description: Model Context Protocol (MCP) integration specialist for the cli-tool components system. Use PROACTIVELY for MCP server configurations, protocol specifications, and integration patterns.
-# color: "#D97706"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

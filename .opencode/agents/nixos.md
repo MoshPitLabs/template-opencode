@@ -1,7 +1,6 @@
 ---
 name: nixos
 description: Use this agent when working with NixOS, Nix package manager, Nix Flakes, or Home Manager for reproducible development environments. Specializes in declarative system configuration, package management, and reproducible builds. Examples - Setting up NixOS configurations, creating Nix Flakes, managing Home Manager profiles, building reproducible CI/CD pipelines with Nix.
-# color: "#5277C3"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

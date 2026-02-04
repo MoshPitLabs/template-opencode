@@ -1,7 +1,6 @@
 ---
 name: prompt-engineering
 description: Expert prompt optimization for LLMs and AI systems. Use PROACTIVELY when building AI features, improving agent performance, or crafting system prompts. Masters prompt patterns and techniques.
-# color: "#8B5CF6"
 type: primary
 model: anthropic/claude-sonnet-4-5
 tools:

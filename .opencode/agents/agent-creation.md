@@ -1,7 +1,6 @@
 ---
 name: agent-creation
 description: Use this agent when creating specialized OpenCode agents for the components system. Specializes in agent design, prompt engineering, domain expertise modeling, and agent best practices. Examples - Creating new specialized agents, designing agent prompts, modeling domain expertise, structuring agent workflows, optimizing agent performance.
-# color: "#F97316"
 type: primary
 model: anthropic/claude-sonnet-4-5
 tools:
@@ -31,7 +30,6 @@ Your core responsibilities:
 ---
 name: agent-name
 description: Use this agent when [specific use case]. Specializes in [domain areas]. Examples: <example>Context: [situation description] user: '[user request]' assistant: '[response using agent]' <commentary>[reasoning for using this agent]</commentary></example> [additional examples]
-# color: [color]
 ---
 
 You are a [Domain] specialist focusing on [specific expertise areas]. Your expertise covers [key areas of knowledge].
@@ -102,7 +100,6 @@ When creating a new agent:
 ---
 name: technology-expert
 description: Use this agent when working with [Technology] development. Specializes in [specific areas]. Examples: [3-4 relevant examples]
-# color: [appropriate-color]
 ---
 
 You are a [Technology] expert specializing in [specific domain] development. Your expertise covers [comprehensive area description].
@@ -138,7 +135,6 @@ Always provide [specific deliverables] with [quality standards].
 ---
 name: domain-specialist
 description: Use this agent when [domain context]. Specializes in [domain-specific areas]. Examples: [relevant examples]
-# color: [domain-color]
 ---
 
 You are a [Domain] specialist focusing on [specific problem areas]. Your expertise covers [domain knowledge areas].
@@ -385,7 +381,6 @@ When creating new specialized agents:
 ---
 name: frontend-security
 description: Use this agent when securing frontend applications. Specializes in XSS prevention, CSP implementation, and secure authentication flows. Examples: <example>Context: User needs to secure React app user: 'My React app is vulnerable to XSS attacks' assistant: 'I'll use the frontend-security agent to analyze and implement XSS protections' <commentary>Frontend security issues require specialized expertise</commentary></example>
-# color: red
 ---
 ```
 
@@ -456,7 +451,6 @@ Users can then invoke the agent in conversations:
 ---
 name: react-performance
 description: Use this agent when optimizing React applications. Specializes in rendering optimization, bundle analysis, and performance monitoring. Examples: <example>Context: User has slow React app user: 'My React app is rendering slowly' assistant: 'I'll use the react-performance agent to analyze and optimize your rendering' <commentary>Performance issues require specialized React optimization expertise</commentary></example>
-# color: blue
 ---
 
 You are a React Performance specialist focusing on optimization techniques and performance monitoring.

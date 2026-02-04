@@ -1,7 +1,6 @@
 ---
 name: security-engineer
 description: Security infrastructure and compliance specialist. Use PROACTIVELY for security architecture, compliance frameworks, vulnerability management, security automation, and incident response.
-# color: "#DC2626"
 type: primary
 model: anthropic/claude-sonnet-4-5
 tools:

@@ -1,7 +1,6 @@
 ---
 name: discord-golang-haiku45
 description: Use this agent when building Discord bots and services with Go 1.25+. Specializes in Discord API integration, bot development, bot APIs, database integration, AI/LLM integration (Ollama), and modular microservice architectures. Examples - Discord bots with slash commands, bots with internal HTTP APIs, RAG-powered Q&A bots, Discord-PostgreSQL-Redis integration, account linking bots.
-# color: "#5865F2"
 type: subagent
 model: anthropic/claude-haiku-4-5
 tools:

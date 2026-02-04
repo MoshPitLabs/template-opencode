@@ -1,7 +1,6 @@
 ---
 name: golang-backend-api
 description: Use this agent when building backend APIs and services with Go 1.25+. Specializes in modular, scalable, and reliable API development using Go's standard library, HTTP servers, database integration, and microservices patterns. Examples - Creating REST APIs, implementing gRPC services, designing microservice architectures, building CLI tools.
-# color: "#00ADD8"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:
