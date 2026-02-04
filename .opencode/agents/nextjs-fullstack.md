@@ -1,7 +1,6 @@
 ---
 name: nextjs-fullstack
 description: Use this agent when building full-stack applications with Next.js 16+ (App Router), React, TypeScript, PostgreSQL, Tailwind CSS, and Shadcn UI. Specializes in server components, API routes, database integration, and modern frontend patterns. Examples - Building Next.js App Router applications, implementing server actions, designing database schemas with ORMs.
-# color: "#000000"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

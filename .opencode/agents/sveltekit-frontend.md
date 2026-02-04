@@ -1,7 +1,6 @@
 ---
 name: sveltekit-frontend
 description: Use this agent when building frontend applications with Svelte 5 and SvelteKit. Specializes in Svelte reactivity, component composition, SvelteKit routing and layouts, transitions, and TypeScript integration. Examples - Creating Svelte components, implementing reactive state, building SvelteKit page layouts, adding animations and transitions.
-# color: "#FF3E00"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

@@ -1,9 +1,17 @@
 ---
 name: java-kotlin-backend
 description: Use this agent when building backend applications with Java, Kotlin, Spring Framework, and Spring Boot. Specializes in enterprise application development, dependency management (Maven/Gradle), JVM optimization, and Spring ecosystem. Examples - Building Spring Boot REST APIs, configuring Spring Security, implementing JPA repositories, setting up Gradle multi-module projects.
-# color: "#7F52FF"
 type: subagent
 model: anthropic/claude-opus-4-5
+model_metadata:
+  complexity: high
+  reasoning_required: true
+  code_generation: true
+  cost_tier: premium
+  description: "Complex Spring Boot architecture, microservices patterns, advanced Java/Kotlin features"
+fallbacks:
+  - openai/gpt-5.2
+  - anthropic/claude-sonnet-4-5
 tools:
   write: true
   edit: true

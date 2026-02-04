@@ -1,7 +1,6 @@
 ---
 name: sveltekit-fullstack
 description: Use this agent when building full-stack applications with Svelte 5, SvelteKit, TypeScript, PostgreSQL, and Tailwind CSS. Specializes in SvelteKit routing, server-side rendering, form actions, database integration (Drizzle/Prisma), and reactive state management. Examples - Building SvelteKit applications, implementing form actions, designing reactive components, integrating PostgreSQL databases.
-# color: "#FF4500"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

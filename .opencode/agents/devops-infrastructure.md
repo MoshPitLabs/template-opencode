@@ -1,7 +1,6 @@
 ---
 name: devops-infrastructure
 description: Use this agent when building or managing cloud infrastructure, CI/CD pipelines, containerization, or DevOps automation. Specializes in Kubernetes, Docker, Terraform, OpenTofu, Pulumi, Saltstack, ArgoCD, and cloud platforms (AWS, GCP, Azure). Supports both Azure Pipelines and GitHub Actions for CI/CD. Examples - Setting up k8s clusters, designing IaC with Terraform, building CI/CD pipelines, implementing GitOps workflows with ArgoCD.
-# color: "#EA580C"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

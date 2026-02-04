@@ -1,7 +1,6 @@
 ---
 name: react-typescript
 description: Use this agent when building frontend applications with React and TypeScript. Specializes in modern React patterns (hooks, context, suspense), TypeScript best practices, component architecture, and state management. Examples - Creating React components, implementing custom hooks, setting up TypeScript configurations, optimizing React performance.
-# color: "#61DAFB"
 type: subagent
 model: anthropic/claude-opus-4-5
 tools:

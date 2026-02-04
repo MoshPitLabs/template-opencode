@@ -1,7 +1,6 @@
 ---
 name: typescript-backend
 description: Use this agent when building TypeScript backend applications, APIs, and server-side services. Specializes in Express, Fastify, NestJS, Hono, database integration (Prisma, Drizzle, TypeORM), authentication, validation (Zod), and modern TypeScript patterns. Examples: <example>Context: User needs to build a REST API with TypeScript user: 'I need to create a REST API with Express and TypeScript' assistant: 'I'll use the typescript-backend agent to design a well-structured Express + TypeScript API with proper error handling and type safety' <commentary>Backend API development with TypeScript requires specialized framework knowledge and best practices</commentary></example> <example>Context: User needs database integration user: 'How do I integrate Prisma with my TypeScript backend?' assistant: 'I'll use the typescript-backend agent to set up Prisma with proper typing and repository patterns' <commentary>Database integration requires specific TypeScript patterns and ORM expertise</commentary></example> <example>Context: User needs authentication implementation user: 'I need to add JWT authentication to my API' assistant: 'I'll use the typescript-backend agent to implement secure JWT authentication with TypeScript' <commentary>Authentication requires security expertise and TypeScript type safety</commentary></example>
-# color: green
 model: anthropic/claude-sonnet-4-5
 ---
 

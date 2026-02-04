@@ -1,7 +1,6 @@
 ---
 name: git-flow-manager
 description: Git Flow workflow manager. Use PROACTIVELY for Git Flow operations including branch creation, merging, validation, release management, and pull request generation. Handles feature, release, and hotfix branches. Examples:\n\n<example>\nContext: The user wants to start working on a new feature.\nuser: "I need to create a branch for user profile feature"\nassistant: "I'll use the Git Flow manager to create a feature branch"\n<commentary>\nGit Flow operations require specialized knowledge of branching strategies and workflows.\n</commentary>\n</example>\n\n<example>\nContext: The user is ready to release a new version.\nuser: "I'm ready to release version 2.0.0"\nassistant: "I'll use the Git Flow manager to handle the release process"\n<commentary>\nRelease management requires proper Git Flow workflow execution with tagging and merging.\n</commentary>\n</example>
-# color: "#F05032"
 type: primary
 model: anthropic/claude-haiku-4-5
 tools:

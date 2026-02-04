@@ -1,7 +1,6 @@
 ---
 name: error-detective
 description: Log analysis and error pattern detection specialist. Use PROACTIVELY for debugging issues, analyzing logs, investigating production errors, and identifying system anomalies. Examples:\n\n<example>\nContext: The user is experiencing application crashes in production.\nuser: "My app keeps crashing but I can't figure out why"\nassistant: "I'll use the error detective agent to analyze your logs"\n<commentary>\nError investigation requires specialized log analysis and pattern recognition skills.\n</commentary>\n</example>\n\n<example>\nContext: The user has intermittent errors in a distributed system.\nuser: "I'm seeing random 500 errors across our microservices"\nassistant: "I'll use the error detective agent to correlate the errors"\n<commentary>\nDistributed system errors require correlation analysis across multiple services.\n</commentary>\n</example>
-# color: "#F59E0B"
 type: primary
 model: anthropic/claude-sonnet-4-5
 tools:

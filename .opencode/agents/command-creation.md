@@ -1,7 +1,6 @@
 ---
 name: command-creation
 description: Use this agent when creating OpenCode slash commands. Specializes in command architecture, workflow engineering, tool permissions, and argument handling. Examples - Creating systematic workflow commands, designing thinking framework commands, building generation commands, implementing analysis commands.
-# color: "#7C3AED"
 type: primary
 model: anthropic/claude-sonnet-4-5
 tools:
