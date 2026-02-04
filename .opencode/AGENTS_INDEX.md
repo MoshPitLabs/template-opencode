@@ -2,7 +2,8 @@
 
 Complete catalog of all agents, skills, and commands in the `.opencode` directory.
 
-**Last Updated:** 2026-02-04
+**Last Updated:** 2026-02-04  
+**Total Components:** 27 agents, 8 skills, 5 commands
 
 ---
 
@@ -12,7 +13,7 @@ Complete catalog of all agents, skills, and commands in the `.opencode` director
   - [Frontend Stack](#frontend-stack-4-agents)
   - [Backend Stack](#backend-stack-5-agents)
   - [DevOps & Infrastructure](#devops--infrastructure-3-agents)
-  - [Code Quality & Review](#code-quality--review-3-agents)
+  - [Code Quality & Review](#code-quality--review-5-agents)
   - [Meta & System](#meta--system-4-agents)
   - [Integration Specialists](#integration-specialists-2-agents)
   - [Domain Specialists](#domain-specialists-2-agents)
@@ -42,7 +43,7 @@ Complete catalog of all agents, skills, and commands in the `.opencode` director
 | **golang-tui-bubbletea** | Opus 4.5 | Go terminal UIs with Bubbletea v2 |
 | **java-kotlin-backend** | Opus 4.5 | Java 25+ / Kotlin Spring Boot applications |
 | **typescript-backend** | Sonnet 4.5 | TypeScript backend APIs (Express, Fastify, NestJS) |
-| **discord-golang-haiku45** | Haiku 4.5 | Discord bots with Go + discordgo |
+| **discord-golang** | Haiku 4.5 | Discord bots with Go + discordgo |
 
 ### DevOps & Infrastructure (3 agents)
 
@@ -52,13 +53,15 @@ Complete catalog of all agents, skills, and commands in the `.opencode` director
 | **nixos** | Opus 4.5 | NixOS, Nix Flakes, Home Manager |
 | **git-flow-manager** | Haiku 4.5 | Git Flow branching workflows |
 
-### Code Quality & Review (3 agents)
+### Code Quality & Review (5 agents)
 
 | Agent | Model | Use Case |
 |-------|-------|----------|
 | **architecture-review** | Sonnet 4.5 | Code architecture and best practices review |
 | **code-review** | Sonnet 4.5 | Code quality, security, maintainability review |
+| **database-specialist** | Opus 4.5 | Database design, schema modeling, query optimization |
 | **security-engineer** | Sonnet 4.5 | Security infrastructure and compliance |
+| **testing-engineer** | Sonnet 4.5 | Test strategy, automation, coverage improvement |
 
 ### Meta & System (4 agents)
 
@@ -126,15 +129,17 @@ Complete catalog of all agents, skills, and commands in the `.opencode` director
 
 | Model | Count | Usage Pattern |
 |-------|-------|---------------|
-| **Opus 4.5** | 12 agents | Complex reasoning, architecture, full-stack |
-| **Sonnet 4.5** | 9 agents | Balanced tasks, code review, meta-agents |
-| **Haiku 4.5** | 4 agents | Fast, deterministic workflows |
+| **Opus 4.5** | 13 agents | Complex reasoning, architecture, full-stack |
+| **Sonnet 4.5** | 11 agents | Balanced tasks, code review, meta-agents |
+| **Haiku 4.5** | 3 agents | Fast, deterministic workflows |
+
+**Total Agents: 27**
 
 ### Haiku Agents (Fast & Efficient)
+- discord-golang
 - git-flow-manager
 - linearapp
 - markdown-formatter
-- discord-golang-haiku45
 
 ### Sonnet Agents (Balanced)
 - agent-creation
@@ -145,9 +150,11 @@ Complete catalog of all agents, skills, and commands in the `.opencode` director
 - hytale-modding
 - prompt-engineering
 - security-engineer
+- testing-engineer
 - typescript-backend
 
 ### Opus Agents (Complex & Deep)
+- database-specialist
 - devops-infrastructure
 - golang-backend-api
 - golang-tui-bubbletea

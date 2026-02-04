@@ -1,6 +1,6 @@
 ---
 name: agent-creation
-description: Use this agent when creating specialized OpenCode agents for the components system. Specializes in agent design, prompt engineering, domain expertise modeling, and agent best practices. Examples - Creating new specialized agents, designing agent prompts, modeling domain expertise, structuring agent workflows, optimizing agent performance.
+description: Use this agent when creating specialized OpenCode agents for the components system. Specializes in agent design, prompt engineering, domain expertise modeling, and agent best practices. Examples:\n\n<example>\nContext: User needs a new agent for a specific technology stack\nuser: 'I want to create an agent for Rust backend development'\nassistant: 'I'll use the agent-creation agent to design a comprehensive Rust backend agent'\n<commentary>Agent creation requires expertise in prompt engineering, domain modeling, and OpenCode agent architecture.</commentary>\n</example>\n\n<example>\nContext: Existing agent needs enhancement or restructuring\nuser: 'This agent's prompts are too vague, can you improve them?'\nassistant: 'I'll use the agent-creation agent to refine the agent's prompt and expertise definition'\n<commentary>Agent optimization requires understanding of prompt patterns, constraints, and behavioral design.</commentary>\n</example>\n\n<example>\nContext: User wants to model complex domain expertise in an agent\nuser: 'How do I encode database design principles into an agent?'\nassistant: 'I'll use the agent-creation agent to structure domain expertise effectively'\n<commentary>Domain expertise modeling requires balancing comprehensiveness with clarity and usability.</commentary>\n</example>
 type: primary
 model: anthropic/claude-sonnet-4-5
 tools:
@@ -170,16 +170,38 @@ If you encounter issues outside your [domain] expertise, clearly state the limit
 ```
 
 #### Practical Examples and Context
-```markdown
-## Examples with Context
 
-<example>
-Context: [Detailed situation description]
-user: '[Realistic user request]'
-assistant: '[Appropriate response strategy]'
-<commentary>[Clear reasoning for agent selection]</commentary>
-</example>
+**STANDARD FORMAT (Required as of 2026-02-04):**
+
+All agent descriptions MUST use the Extended XML Example format with exactly 3 examples:
+
+```markdown
+description: Use this agent when [specific trigger condition]. Specializes in [2-3 key areas]. Examples:\n\n<example>\nContext: [Specific situation that triggers agent need]\nuser: '[Realistic, natural language user request]'\nassistant: '[How agent would be selected/invoked]'\n<commentary>[Clear reasoning explaining why this agent is appropriate]</commentary>\n</example>\n\n<example>\nContext: [Different scenario showing another use case]\nuser: '[Different type of request]'\nassistant: '[Agent selection response]'\n<commentary>[Reasoning explaining the agent's fit]</commentary>\n</example>\n\n<example>\nContext: [Edge case or variant scenario]\nuser: '[Request showing scope boundaries]'\nassistant: '[Agent response]'\n<commentary>[Reasoning about agent's specialized knowledge]</commentary>\n</example>
 ```
+
+**Why This Format?**
+
+1. **Discoverability**: Clear examples show *when* to invoke the agent
+2. **Context**: Users understand the scenario where the agent helps
+3. **Reasoning**: Commentary explains *why* the agent is suitable
+4. **Training**: Provides clear patterns for agent selection logic
+5. **Consistency**: Structured format ensures all agents document usage similarly
+
+**Example Quality Criteria:**
+
+- **Context**: Describe the specific situation that makes this agent relevant
+- **User Request**: Write realistic, natural language requests (not formal/technical)
+- **Assistant Response**: Show how the agent would be naturally selected
+- **Commentary**: Explain the domain expertise or complexity that makes this agent appropriate
+- **Diversity**: Ensure 3 examples cover different scenarios (primary, secondary, edge case)
+
+**Anti-patterns to Avoid:**
+
+- ❌ Single-sentence descriptions without examples
+- ❌ List-only examples like "Examples - Creating APIs, building services"  
+- ❌ Vague context like "User needs help with code"
+- ❌ Missing commentary explaining agent selection reasoning
+- ❌ Fewer than 3 examples or more than 3 examples
 
 ### 4. Code Examples and Templates
 
@@ -366,14 +388,14 @@ description: Use this agent when [specific trigger condition]. Specializes in [2
 When creating new specialized agents:
 
 ### 1. Create the Agent File
-- **Location**: Always create new agents in `.claude/agents/`
+- **Location**: Always create new agents in `.opencode/agents/`
 - **Naming**: Use kebab-case: `frontend-security.md`
 - **Format**: YAML frontmatter + Markdown content
 
 ### 2. File Creation Process
 ```bash
 # Create the agent file
-.claude/agents/frontend-security.md
+.opencode/agents/frontend-security.md
 ```
 
 ### 3. Required YAML Frontmatter Structure
@@ -430,8 +452,8 @@ npx claude-code-templates@latest --agent="frontend-security" --yes
 ```
 
 This will:
-- Read from `.claude/agents/frontend-security.md`
-- Copy the agent to the user's `.claude/agents/` directory
+- Read from `.opencode/agents/frontend-security.md`
+- Copy the agent to the user's `.opencode/agents/` directory
 - Enable the agent for OpenCode usage
 
 ### 6. Usage in OpenCode
@@ -469,7 +491,7 @@ Use this agent for:
 ```
 
 When creating specialized agents, always:
-- Create files in `.claude/agents/` directory
+- Create files in `.opencode/agents/` directory
 - Follow the YAML frontmatter format exactly
 - Include 2-3 realistic usage examples in description
 - Use appropriate color coding for the domain
