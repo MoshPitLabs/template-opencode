@@ -1,5 +1,11 @@
 # OpenCode Configuration Template
 
+**TEMPLATE FILE:** This is a template for creating your project-specific AGENTS.md file. 
+Replace all placeholders `[like this]` with your actual project information. 
+Delete this note when you're done customizing.
+
+---
+
 This file provides context and instructions for AI assistants working in this repository.
 
 ---
@@ -164,18 +170,17 @@ Skills bundle resources, scripts, and guides for specific tasks.
 
 ## Project Overview
 
-**Project Name:** OpenCode Components Template  
-**Description:** Production-ready template repository for OpenCode projects with specialized agents, commands, and skills.
+**Project Name:** `[YOUR PROJECT NAME]`  
+**Description:** `[Brief description of what your project does]`
 
 **Primary Purpose:**
-This template provides a curated collection of OpenCode components for AI-assisted development across multiple technology stacks including Next.js, Go, Spring Boot, SvelteKit, and game development.
+`[Explain the main purpose and goals of your project. What problem does it solve? Who is it for?]`
 
 **Key Features:**
-- 25 specialized domain expert agents
-- 5 slash commands for systematic workflows
-- 8 bundled skills with helper scripts
-- Comprehensive documentation and guides
-- Model Context Protocol (MCP) server integrations
+- `[Feature 1]`
+- `[Feature 2]`
+- `[Feature 3]`
+- `[Add more as needed]`
 
 ---
 
@@ -184,59 +189,47 @@ This template provides a curated collection of OpenCode components for AI-assist
 ### Core Technologies
 
 **Languages:**
-- TypeScript/JavaScript - Primary language for skills and MCP servers
-- Markdown - Documentation and agent definitions
-- YAML - Configuration and frontmatter
+- `[List your primary programming languages]`
+- `[e.g., Python, TypeScript, Go, Java, etc.]`
 
-**OpenCode Components:**
-- Agents: Markdown files with YAML frontmatter
-- Skills: Markdown + bundled scripts/resources
-- Commands: Markdown workflow definitions
+**Frameworks & Libraries:**
+- `[List your main frameworks]`
+- `[e.g., React, Next.js, Django, Spring Boot, etc.]`
 
 ### Development Tools
 
-**Package Manager:** npm/pnpm  
-**Version Control:** Git + GitHub  
-**Issue Tracking:** Linear (OpenCode Components team)  
-**AI Models:** Claude (Haiku 4.5, Sonnet 4.5, Opus 4.5), OpenAI GPT-5.2
+**Package Manager:** `[e.g., npm, pnpm, pip, maven, gradle]`  
+**Version Control:** `[e.g., Git + GitHub/GitLab/Bitbucket]`  
+**Issue Tracking:** `[e.g., Linear, Jira, GitHub Issues]`  
+**Database:** `[e.g., PostgreSQL, MySQL, MongoDB]`  
+**Deployment:** `[e.g., AWS, GCP, Azure, Docker, Kubernetes]`
 
 ---
 
 ## Project Structure
 
 ```
-template-opencode/
+[your-project-name]/
 ├── .opencode/                   # OpenCode components directory
-│   ├── agents/                  # 25 specialized agents
-│   │   ├── frontend/            # (future: organized by category)
-│   │   ├── backend/
-│   │   └── *.md                 # Current: flat structure
-│   ├── commands/                # 5 slash commands
-│   │   ├── structured-thinking.md
-│   │   ├── ultrathink.md
-│   │   └── ...
-│   ├── skills/                  # 8 bundled skills
-│   │   ├── artifacts-builder/
-│   │   ├── mcp-builder/
-│   │   └── ...
-│   ├── docs/                    # Documentation and guides
-│   │   └── model-selection-guide.md
+│   ├── agents/                  # [Describe your agents organization]
+│   ├── commands/                # [List key commands if any]
+│   ├── skills/                  # [List key skills if any]
+│   ├── docs/                    # [Project-specific documentation]
 │   ├── plans/                   # Implementation plans
 │   ├── notes/                   # Session notes
-│   ├── mcp-servers/            # MCP server implementations
-│   │   └── discord/
-│   ├── settings/               # Environment configurations
-│   ├── AGENTS_INDEX.md         # Complete component catalog
-│   └── AGENTS.md               # This file (context for AI)
-├── .github/                    # GitHub templates and workflows
+│   └── AGENTS_INDEX.md         # Component catalog (optional)
+├── [src/lib/app/etc.]/         # [Your source code directory]
+│   └── [your modules/packages]
+├── [tests/]/                   # [Your test directory]
+├── [config/]/                  # [Configuration files]
 ├── README.md                   # Project documentation
-└── package.json               # Node.js dependencies
+└── [package.json/pom.xml/etc.] # [Your dependency file]
 ```
 
 **Key Files:**
-- `.opencode/AGENTS_INDEX.md` - Complete catalog of all components
-- `.opencode/docs/model-selection-guide.md` - Model tier selection guide
-- `.opencode/agents/git-flow-manager.md` - Git workflow conventions
+- `[List your important configuration files]`
+- `[List your main entry points]`
+- `[List any critical documentation files]`
 
 ---
 
@@ -246,15 +239,15 @@ template-opencode/
 
 **Format:** `domain-technology.md` or `role-specialization.md`
 
-**Examples:**
-- `java-kotlin-backend.md` - Technology + scope
-- `security-engineer.md` - Role + domain
-- `git-flow-manager.md` - Tool + function
+**Your Project's Naming Convention:**
+- `[Define your agent naming pattern]`
+- `[Example 1: e.g., backend-api.md]`
+- `[Example 2: e.g., data-analyst.md]`
 
-**Anti-patterns (avoid):**
-- ❌ `java-kotlin-backend-opus45.md` - No model names in filename
-- ❌ `JavaKotlinBackend.md` - Use kebab-case, not PascalCase
-- ❌ `javabackend.md` - Include hyphen separators
+**Guidelines:**
+- Use kebab-case (lowercase with hyphens)
+- Avoid model names in filenames
+- Be descriptive but concise
 
 ### Agent Frontmatter Structure
 
@@ -328,38 +321,29 @@ skill-name/
 
 ### Adding a New Agent
 
-1. **Research**: Study similar agents for structure and patterns
-2. **Create**: Use `agent-creation` agent for scaffolding
-3. **Test**: Validate agent works for intended use cases
-4. **Document**: Add to `.opencode/AGENTS_INDEX.md`
-5. **PR**: Submit pull request with clear description
-
-**Reference:** See `.opencode/agents/agent-creation.md`
+1. **Research**: `[Describe where to look for examples]`
+2. **Create**: `[Your agent creation process]`
+3. **Test**: `[How you validate agents]`
+4. **Document**: `[Where to document new agents]`
+5. **Review**: `[Your review/approval process]`
 
 ### Adding a New Skill
 
-1. **Plan**: Define bundled resources and scripts needed
-2. **Create**: Use `skill-creator` skill for scaffolding
-3. **Bundle**: Include all necessary scripts and references
-4. **Test**: Validate skill works end-to-end
-5. **Document**: Add to `.opencode/AGENTS_INDEX.md`
-
-**Reference:** See `.opencode/skills/skill-creator/`
+1. **Plan**: `[Your skill planning process]`
+2. **Create**: `[How you create skills]`
+3. **Bundle**: `[What to include in skills]`
+4. **Test**: `[How you test skills]`
+5. **Document**: `[Where to document skills]`
 
 ### Model Selection for New Agents
 
-Consult `.opencode/docs/model-selection-guide.md` to select appropriate model tier:
-
-- **Haiku 4.5**: Deterministic workflows, simple transformations
-- **Sonnet 4.5**: Code analysis, balanced complexity
-- **Opus 4.5**: Complex architecture, deep reasoning
+`[Define your model selection strategy]`
 
 **Decision Framework:**
-1. Assess task complexity (low/medium/high)
-2. Determine reasoning requirements
-3. Consider code generation scope
-4. Evaluate domain expertise depth
-5. Choose model tier accordingly
+1. `[Your criterion 1]`
+2. `[Your criterion 2]`
+3. `[Your criterion 3]`
+4. `[Add more as needed]`
 
 ---
 
@@ -367,54 +351,57 @@ Consult `.opencode/docs/model-selection-guide.md` to select appropriate model ti
 
 ### Updating Component Documentation
 
-When components change, update these files:
-1. `.opencode/AGENTS_INDEX.md` - Main catalog
-2. This file (`AGENTS.md`) - If conventions change
-3. Individual component files - Keep descriptions current
+`[List the files that need updating when components change]`
 
-### Managing Linear Issues
+1. `[File 1 and when to update it]`
+2. `[File 2 and when to update it]`
+3. `[Add more as needed]`
 
-**Team:** OpenCode Components (OCC)  
-**Issue Prefixes:** OCC-1, OCC-2, etc.
+### Managing Issues
+
+**Issue Tracker:** `[e.g., Linear, Jira, GitHub Issues]`  
+**Team/Project:** `[Your team name or project identifier]`  
+**Issue Prefixes:** `[e.g., PROJ-1, PROJ-2, or no prefix]`
 
 **Common Labels:**
-- `model-selection` - Model tier changes
-- `agent-enhancement` - Agent improvements
-- `documentation` - Doc updates
-- `p0`, `p1`, `p2` - Priority levels
+- `[label 1]` - `[Description]`
+- `[label 2]` - `[Description]`
+- `[label 3]` - `[Description]`
 
 ### Creating Pull Requests
 
 **Required in PR Description:**
-- Summary of changes
-- Impact analysis (discoverability, maintenance, etc.)
-- Files changed breakdown
-- Testing performed
-- Linear issues closed
+- `[What you require in PR descriptions]`
+- `[e.g., Summary of changes]`
+- `[e.g., Testing performed]`
+- `[e.g., Related issues]`
 
 **PR Title Format:**
 ```
-<type>: <concise description>
+[Your PR title format]
 ```
 
-Examples:
-- `feat: add database-specialist agent`
-- `docs: update model selection guide`
-- `refactor: consolidate duplicate agents`
+**Examples:**
+- `[Example 1]`
+- `[Example 2]`
+- `[Example 3]`
 
 ---
 
 ## Resources
 
 ### Internal Documentation
-- [Agent Index](.opencode/AGENTS_INDEX.md) - Complete component catalog
-- [Model Selection Guide](.opencode/docs/model-selection-guide.md) - Model tier rationale
-- [Git Flow Manager](.opencode/agents/git-flow-manager.md) - Git conventions
+- `[Link to your main documentation file]`
+- `[Link to architecture docs]`
+- `[Link to API documentation]`
+- `[Add more as needed]`
 
 ### External Resources
-- [OpenCode Documentation](https://opencode.dev/docs) - Official docs
-- [Linear Team](https://linear.app/moshpitcodes/team/OCC) - Issue tracking
-- [GitHub Repository](https://github.com/MoshPitLabs/template-opencode) - Source code
+- `[Link to company wiki/knowledge base]`
+- `[Link to issue tracker]`
+- `[Link to repository]`
+- `[Link to deployment dashboard]`
+- `[Add more as needed]`
 
 ---
 
@@ -442,6 +429,6 @@ Retain these general sections as-is:
 
 ---
 
-**Last Updated:** 2026-02-04  
-**Template Version:** 1.0.0  
-**Maintained By:** OpenCode Components Team
+**Last Updated:** `[YYYY-MM-DD]`  
+**Version:** `[Your project version]`  
+**Maintained By:** `[Your team name]`
